@@ -1,5 +1,3 @@
-bash <(cat << 'OUTER_EOF'
-
 #!/usr/bin/env bash
 
 set -euo pipefail
@@ -619,6 +617,3 @@ echo "汇报间隔:  每 ${REPORT_DAYS} 天（北京时间 09:00 检查）"
 echo "─────────────────────────────────────────────"
 echo "一键卸载:  /root/traffic_monitor_pro.sh uninstall"
 echo "================================================="
-
-OUTER_EOF
-)
