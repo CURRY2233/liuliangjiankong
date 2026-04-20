@@ -181,12 +181,15 @@ echo " 📋 推送配置"
 echo "═══════════════════════════════════════"
 read -r -p " 👉 Server酱 SendKey [当前: ${OLD_SERVERCHAN:-无}]: " INPUT_SERVERCHAN
 SERVERCHAN_KEY="${INPUT_SERVERCHAN:-$OLD_SERVERCHAN}"
+SERVERCHAN_KEY="$(echo -n "$SERVERCHAN_KEY" | tr -d '\r\n\t ')"
 
 read -r -p " 👉 Telegram Bot Token [当前: ${OLD_TG_BOT:-无}]: " INPUT_TG_BOT
 TG_BOT_TOKEN="${INPUT_TG_BOT:-$OLD_TG_BOT}"
+TG_BOT_TOKEN="$(echo -n "$TG_BOT_TOKEN" | tr -d '\r\n\t ')"
 
 read -r -p " 👉 Telegram Chat ID [当前: ${OLD_TG_CHAT:-无}]: " INPUT_TG_CHAT
 TG_CHAT_ID="${INPUT_TG_CHAT:-$OLD_TG_CHAT}"
+TG_CHAT_ID="$(echo -n "$TG_CHAT_ID" | tr -d '\r\n\t ')"
 
 echo
 echo "═══════════════════════════════════════"
