@@ -133,8 +133,8 @@ echo
 echo "═══════════════════════════════════════"
 echo " 🏷️  服务器标识"
 echo "═══════════════════════════════════════"
-read -r -p " 👉 服务器名称（如 谷歌云/腾讯云/阿里云）[当前: ${OLD_SERVER_NAME:-谷歌云}]: " INPUT_SERVER_NAME
-SERVER_NAME="${INPUT_SERVER_NAME:-${OLD_SERVER_NAME:-谷歌云}}"
+read -r -p " 👉 服务器名称（如 腾讯云/阿里云/谷歌云）[当前: ${OLD_SERVER_NAME:-腾讯云}]: " INPUT_SERVER_NAME
+SERVER_NAME="${INPUT_SERVER_NAME:-${OLD_SERVER_NAME:-腾讯云}}"
 
 echo
 echo "═══════════════════════════════════════"
