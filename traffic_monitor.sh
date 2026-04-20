@@ -133,8 +133,24 @@ echo
 echo "═══════════════════════════════════════"
 echo " 🏷️  服务器标识"
 echo "═══════════════════════════════════════"
-read -r -p " 👉 服务器名称（如 谷歌云/腾讯云/阿里云）[当前: ${OLD_SERVER_NAME:-谷歌云}]: " INPUT_SERVER_NAME
-SERVER_NAME="${INPUT_SERVER_NAME:-${OLD_SERVER_NAME:-谷歌云}}"
+echo "   [1] 谷歌云"
+echo "   [2] 腾讯云"
+echo "   [3] 阿里云"
+echo "   [0] 自定义名称 (如打不出中文可复制粘贴)"
+DEFAULT_NAME="${OLD_SERVER_NAME:-谷歌云}"
+read -r -p " 👉 请选择序号或直接输入 [1/2/3/0，当前默认: ${DEFAULT_NAME}]: " INPUT_SERVER_NAME
+
+case "${INPUT_SERVER_NAME}" in
+    1) SERVER_NAME="谷歌云" ;;
+    2) SERVER_NAME="腾讯云" ;;
+    3) SERVER_NAME="阿里云" ;;
+    0) 
+       read -r -p " 👉 请输入新名字: " SERVER_NAME 
+       if [ -z "${SERVER_NAME}" ]; then SERVER_NAME="${DEFAULT_NAME}"; fi
+       ;;
+    "") SERVER_NAME="${DEFAULT_NAME}" ;;
+    *) SERVER_NAME="${INPUT_SERVER_NAME}" ;; # 允许用户直接敲英文或直接在此处粘贴
+esac
 
 echo
 echo "═══════════════════════════════════════"
